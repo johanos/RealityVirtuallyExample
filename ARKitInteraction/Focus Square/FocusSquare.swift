@@ -12,7 +12,7 @@ import ARKit
 private let focusSquarePositionAvgCount = 10
 
 class FocusSquare: SCNNode {
-/**** 1
+// 1
     enum State {
         case initializing
         case featuresDetected(anchorPosition: float3, camera: ARCamera?)
@@ -29,16 +29,18 @@ class FocusSquare: SCNNode {
     }
     
     /// Called when a surface has been detected.
-    private func displayAsOpen(at position: float3, camera: ARCamera?) {
+    private func displayAsConstant(at position: float3, camera: ARCamera?) {
         recentFocusSquarePositions.append(position)
         updateTransform(for: position, camera: camera)
+        self.planeNode.childNodes[0].geometry?.firstMaterial?.setValue(0, forKeyPath: "shouldPulse")
     }
     
     /// Called when a plane has been detected.
-    private func displayAsClosed(at position: float3, planeAnchor: ARPlaneAnchor, camera: ARCamera?) {
+    private func displayAsPulsing(at position: float3, planeAnchor: ARPlaneAnchor, camera: ARCamera?) {
         anchorsOfVisitedPlanes.insert(planeAnchor)
         recentFocusSquarePositions.append(position)
         updateTransform(for: position, camera: camera)
+        self.planeNode.childNodes[0].geometry?.firstMaterial?.setValue(1, forKeyPath: "shouldPulse")
     }
     
     private func displayAsBillboard(){
@@ -54,16 +56,16 @@ class FocusSquare: SCNNode {
                 displayAsBillboard()
                 
             case .featuresDetected(let anchorPosition, let camera):
-                displayAsOpen(at: anchorPosition, camera: camera)
+                displayAsConstant(at: anchorPosition, camera: camera)
                 
             case .planeDetected(let anchorPosition, let planeAnchor, let camera):
-                displayAsClosed(at: anchorPosition, planeAnchor: planeAnchor, camera: camera)
+                displayAsPulsing(at: anchorPosition, planeAnchor: planeAnchor, camera: camera)
             }
         }
     }
-***/
-    
-/**** 2
+// 1
+
+// 2
     private var planeNode: SCNNode
     
     // Indicates the last position of grid on the plane.
@@ -95,9 +97,9 @@ class FocusSquare: SCNNode {
         self.opacity = 1.0
     }
  
- ***/
+// 2
     
-/**** 3
+// 3
 
     // use average of recent positions to avoid jitter
     private var recentFocusSquarePositions = [float3]()
@@ -117,7 +119,7 @@ class FocusSquare: SCNNode {
             self.position = SCNVector3(newPosition)
         }
     }
- ***/ 
+ // 3
 }
 
 
