@@ -19,6 +19,7 @@
 		39D8DC1B1E8ADAE600386B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */; };
 		9DB0E3A21F831425001B899E /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0E3A11F831425001B899E /* FocusSquare.swift */; };
 		9DB0E3A81F83246C001B899E /* FocusSquare in Resources */ = {isa = PBXBuildFile; fileRef = 9DB0E3A61F831AC2001B899E /* FocusSquare */; };
+		9DE6C4641FC4BE73005C845B /* AssimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE6C4631FC4BE73005C845B /* AssimpKit.framework */; };
 		C41366B91EB80DD400EC054A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41366B81EB80DD400EC054A /* StatusViewController.swift */; };
 		C46356671EF9CC500080C8D9 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46356661EF9CC480080C8D9 /* VirtualObjectARView.swift */; };
 		C46356681EF9CC530080C8D9 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46356651EF9CB1A0080C8D9 /* VirtualObjectLoader.swift */; };
@@ -44,6 +45,7 @@
 		39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DB0E3A11F831425001B899E /* FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		9DB0E3A61F831AC2001B899E /* FocusSquare */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FocusSquare; sourceTree = "<group>"; };
+		9DE6C4631FC4BE73005C845B /* AssimpKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssimpKit.framework; path = Carthage/Build/iOS/AssimpKit.framework; sourceTree = "<group>"; };
 		C41366B81EB80DD400EC054A /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C46356651EF9CB1A0080C8D9 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
 		C46356661EF9CC480080C8D9 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE6C4641FC4BE73005C845B /* AssimpKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +115,7 @@
 				3929C4891E89EC2C00E00B60 /* Products */,
 				CB3BF427464FE5989C5ECFA9 /* Configuration */,
 				CA0ADFFA247BCD89BEF87B81 /* LICENSE */,
+				9DE6C4621FC4BE73005C845B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +153,14 @@
 				9DB0E3A61F831AC2001B899E /* FocusSquare */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		9DE6C4621FC4BE73005C845B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DE6C4631FC4BE73005C845B /* AssimpKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C40DF57B1EC2330700D9D59E /* Virtual Objects */ = {
@@ -393,6 +405,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FL7CJXV52;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitInteraction/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.realityVirtually;
@@ -412,6 +428,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FL7CJXV52;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitInteraction/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.realityVirtually;
