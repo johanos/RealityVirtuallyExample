@@ -70,8 +70,10 @@ class ViewController: UIViewController {
         }
         
         focusSquare = FocusSquare(planeNode: focusSquareNode)
-        
+
+        // listen to the ARSCNViewDelegate
         sceneView.delegate = self
+        // listen to the ARSessionDelegate
         sceneView.session.delegate = self
 
         // Set up scene content.
@@ -137,8 +139,11 @@ class ViewController: UIViewController {
     
     /// Creates a new AR configuration to run on the `session`.
 	func resetTracking() {
+        // initalize configuration
         let configuration = ARWorldTrackingConfiguration()
+        // set detection to horizontal (could also be vertical planes)
         configuration.planeDetection = .horizontal
+        // run the session
 		session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
 
         statusViewController.scheduleMessage("FIND A SURFACE TO PLACE AN OBJECT", inSeconds: 7.5, messageType: .planeEstimation)
